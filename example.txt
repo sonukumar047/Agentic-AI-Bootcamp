@@ -1,0 +1,3 @@
+Hello, world!
+This is a file write example.
+Appending this line.
