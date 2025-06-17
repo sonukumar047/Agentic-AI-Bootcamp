@@ -1,17 +1,2 @@
-2025-06-18 00:17:01,491 - DEBUG - This is a DEBUG message (for troubleshooting)
-2025-06-18 00:17:01,491 - INFO - This is an INFO message (general info)
-2025-06-18 00:17:01,492 - WARNING - This is a WARNING message (non-critical issue)
-2025-06-18 00:17:01,492 - ERROR - This is an ERROR message (serious problem)
-2025-06-18 00:17:01,492 - CRITICAL - This is a CRITICAL message (system may crash)
-2025-06-18 00:17:01,492 - INFO - Dividing 10 by 2
-2025-06-18 00:17:01,492 - DEBUG - Result is 5.0
-2025-06-18 00:17:01,492 - INFO - Dividing 5 by 0
-2025-06-18 00:17:01,492 - ERROR - Tried to divide by zero
-Traceback (most recent call last):
-  File "d:\Agentic-AI-Bootcamp\PythonPrerequisites\logging_example.py", line 34, in divide
-    result = a / b
-             ~~^~~
-ZeroDivisionError: division by zero
-2025-06-18 00:17:01,505 - INFO - Calculator initialized
-2025-06-18 00:17:01,506 - INFO - Multiplying 3 * 4
-2025-06-18 00:17:01,506 - DEBUG - Multiplication result: 12
+2025-06-18 00:25:05,845 - APP - INFO - Application started.
+2025-06-18 00:25:05,865 - APP - INFO - Application ended.
