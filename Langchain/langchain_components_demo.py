@@ -1,5 +1,3 @@
-# langchain_components_demo.py
-
 from langchain.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_ollama import OllamaLLM  # ✅ from langchain_ollama not langchain_community
