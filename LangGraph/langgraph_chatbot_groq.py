@@ -23,7 +23,7 @@ ChatState = Annotated[list, add_messages]
 def groq_chat(messages: ChatState) -> ChatState:
     llm = ChatGroq(
         model="llama3-8b-8192",
-        # api_key=os.environ["GROQ_API_KEY"]
+        api_key=os.environ["GROQ_API_KEY"]
     )
     response = llm.invoke(messages)
     print(f"\n🤖 Bot: {response.content}")
