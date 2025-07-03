@@ -5,7 +5,8 @@ from langchain_core.messages import HumanMessage, AIMessage, BaseMessage
 from langchain_groq import ChatGroq
 from langchain_core.runnables import RunnableConfig
 from langgraph.graph import StateGraph, END
-
+from dotenv import load_dotenv
+load_dotenv()
 # -----------------------------------------
 # 1. Define the State using @dataclass
 # -----------------------------------------
@@ -17,7 +18,7 @@ class ChatState:
 # -----------------------------------------
 # 2. Set your GROQ API key
 # -----------------------------------------
-os.environ["GROQ_API_KEY"] = "Replace with your real key"  # Replace with your real key
+os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")  # Replace with your real key
 
 # -----------------------------------------
 # 3. Node Function: Handle a conversation step
