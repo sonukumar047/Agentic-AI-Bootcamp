@@ -69,11 +69,11 @@ def chat_node(state: ChatState) -> ChatState:
 # -------------------------------
 # 🔗 Build LangGraph
 # -------------------------------
-graph = StateGraph(ChatState)
-graph.add_node("chat", chat_node)
-graph.set_entry_point("chat")
-graph.add_edge("chat", END)
-chatbot = graph.compile()
+graph_builder = StateGraph(ChatState)
+graph_builder.add_node("chat", chat_node)
+graph_builder.set_entry_point("chat")
+graph_builder.add_edge("chat", END)
+graph = graph_builder.compile()
 
 # -------------------------------
 # 🏁 Chat Loop
@@ -88,7 +88,7 @@ if __name__ == "__main__":
             break
 
         state.history.append(HumanMessage(content=user_input))
-        result = chatbot.invoke(state)
+        result = graph.invoke(state)
 
         # ✅ Ensure we get back a ChatState object
         if isinstance(result, dict):

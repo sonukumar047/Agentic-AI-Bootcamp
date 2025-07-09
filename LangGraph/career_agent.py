@@ -3,6 +3,7 @@ import os
 import streamlit as st
 from dotenv import load_dotenv
 from typing import List, Dict, Any, TypedDict, Annotated # Import TypedDict and Annotated
+import io # For handling image bytes
 
 # LangChain/LangGraph imports
 from langchain_core.messages import HumanMessage, AIMessage, BaseMessage, ToolMessage
@@ -313,6 +314,19 @@ st.markdown("""
 - **Interview Tips:** "Give me interview tips for a [role] role." (e.g., Data Scientist, Software Engineer)
 - **Project Ideas:** "Suggest project ideas for [domain]." (e.g., Machine Learning, Frontend Development)
 """)
+
+# --- Graph Visualization ---
+st.sidebar.title("Agent Workflow Graph")
+try:
+    # Use graphviz to draw the graph
+    # This requires graphviz to be installed on your system and the 'graphviz' python package
+    graph_image_bytes = app_graph.get_graph().draw_png()
+    st.sidebar.image(graph_image_bytes, caption="LangGraph Workflow", use_column_width=True)
+    st.sidebar.markdown("---")
+except Exception as e:
+    st.sidebar.error(f"Could not render graph: {e}")
+    st.sidebar.info("Please ensure `graphviz` is installed both as a system dependency and a Python package (`pip install graphviz`).")
+
 
 # Initialize chat history in session state
 if "messages" not in st.session_state:
